@@ -43,10 +43,11 @@ To create and populate database tables:
 
 2. Rebuild the containers with the new scripts:
 
-**Caution:** This will stop and remove the containers and all named volumes declared in the "volumes" section and anonymous volumes attached to containers.
+> **Caution:** This will stop all running containers, and remove all named volumes declared in the "volumes" section as well as all anonymous volumes attached to containers.
 
 ```shell
 docker compose down -v
+docker compose build db
 docker compose up
 ```
 
