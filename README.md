@@ -18,7 +18,8 @@ This project provides a starter template for a full stack web application using 
 | PostgreSQL         | `postgres://localhost:5432`         |
 | pgAdmin            | `http://localhost:5050`             |
 | React App          | `http://localhost:3000`             |
-| Express API Server | `http://localhost:4000/health`      |
+| Express API Server | `http://localhost:4000/api/health`  |
+| API Docs (Swagger) | `http://localhost:4000/docs`        |
 
 ## Usage
 
@@ -60,6 +61,15 @@ If any container is not running, check the logs:
 docker ps -a
 docker logs <id_of_the_stopped_container>
 ```
+
+## API Server
+
+The nodejs express `api_server` comes with:
+
+- **Logging**: `winston`-based logger (`configs/logger.js`) plus access-logging and error-handling middlewares, writing to `logs/` and the console.
+- **API docs**: Swagger UI served at `/docs`, generated from JSDoc comments on route files via `swagger-jsdoc`.
+- **Testing**: Jest with coverage thresholds (`npm test`, `npm run test:watch`, `npm run test:coverage`), plus `test-utils/` helpers for mocking Express req/res and Sequelize models.
+- **Linting**: ESLint flat config (`npm run lint`, `npm run lint:fix`).
 
 ## Managing Secrets and Environment Variables
 
