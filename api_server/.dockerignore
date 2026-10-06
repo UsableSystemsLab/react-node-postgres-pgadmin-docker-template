@@ -1,6 +1,8 @@
 node_modules
 **/node_modules
 dist
+coverage
+logs
 .env
 .DS_Store
 .vscode
