@@ -71,6 +71,20 @@ The nodejs express `api_server` comes with:
 - **Testing**: Jest with coverage thresholds (`npm test`, `npm run test:watch`, `npm run test:coverage`), plus `test-utils/` helpers for mocking Express req/res and Sequelize models.
 - **Linting**: ESLint flat config (`npm run lint`, `npm run lint:fix`).
 
+## React App
+
+The `react_app` comes with:
+
+- **Testing**: Vitest + React Testing Library, with coverage thresholds (`npm test`, `npm run test:watch`, `npm run test:coverage`).
+- **Linting**: ESLint flat config (`npm run lint`).
+
+## CI/CD
+
+GitHub Actions workflows under `.github/workflows/` run the test suites for both apps on every push/PR to `main`:
+
+- `api-server-coverage-test.yml` runs the `api_server` Jest suite with coverage.
+- `react-app-coverage-test.yml` runs the `react_app` Vitest suite with coverage, then builds the app.
+
 ## Managing Secrets and Environment Variables
 
 - For production environments, use Docker secrets:
